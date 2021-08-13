@@ -44,6 +44,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "코로나19 예방접종센터"
+        
         self.callCenterSearchService()
         self.setTableView()
         self.setTextField()
@@ -104,6 +106,8 @@ class ViewController: UIViewController {
         self.tableView.delegate = self
         let nib = UINib(nibName: "CenterTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "CenterTableViewCell")
+        self.tableView.separatorStyle = .none
+        self.tableView.bounces = false
     }
     
     // 텍스트필드 세팅
@@ -174,7 +178,6 @@ class ViewController: UIViewController {
                 if let item_sido = item.sido, let item_sigungu = item.sigungu, sido.elementsEqual(item_sido), sigungu.elementsEqual(item_sigungu) {
                     if let item_facilityName = item.facilityName {
                         self.facilityName_Info.append(item_facilityName)
-                        print("facilityName_Info = \(self.facilityName_Info)")
                     }
                 }
             }
@@ -246,14 +249,33 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CenterTableViewCell", for: indexPath) as! CenterTableViewCell
-        cell.center_name.text = self.facilityName_Info[indexPath.row]
+        if self.facilityName_Info.count > 0 {
+            cell.center_name.text = self.facilityName_Info[indexPath.row]
+        } else {
+            cell.center_name.text = "데이터가 없습니다."
+        }
+        
+        let selectView = UIView()
+        selectView.backgroundColor = UIColor.systemBackground
+        cell.selectedBackgroundView = selectView
         return cell
     }
 }
 
 // MARK: UITableViewDelegate
 extension ViewController: UITableViewDelegate {
-    // Todo
-    // 1. 디테일 화면으로 이동
-    // 2. 이동할 때 해당 시설명에 대한 정보 넘겨주기
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
+            return
+        }
+        if let data = self.center_Info?.data {
+            for item in data {
+                if let facilityName = item.facilityName, facilityName.elementsEqual(self.facilityName_Info[indexPath.row]) {
+                    vc.facility_Info = item
+                }
+            }
+        }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
