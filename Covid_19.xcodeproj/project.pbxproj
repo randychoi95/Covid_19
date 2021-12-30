@@ -12,15 +12,18 @@
 		984F1EDB26C2024F003A5FBE /* RESTful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984F1EDA26C2024F003A5FBE /* RESTful.swift */; };
 		984F1EDF26C22190003A5FBE /* CenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984F1EDD26C22190003A5FBE /* CenterTableViewCell.swift */; };
 		984F1EE026C22190003A5FBE /* CenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 984F1EDE26C22190003A5FBE /* CenterTableViewCell.xib */; };
-		984F1EE226C5F82E003A5FBE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984F1EE126C5F82E003A5FBE /* DetailViewController.swift */; };
 		9851D97926B9120800844769 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9851D97826B9120800844769 /* AppDelegate.swift */; };
 		9851D97B26B9120800844769 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9851D97A26B9120800844769 /* SceneDelegate.swift */; };
-		9851D97D26B9120800844769 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9851D97C26B9120800844769 /* ViewController.swift */; };
 		9851D98026B9120800844769 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9851D97E26B9120800844769 /* Main.storyboard */; };
 		9851D98226B9120900844769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9851D98126B9120900844769 /* Assets.xcassets */; };
 		9851D98526B9120900844769 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9851D98326B9120900844769 /* LaunchScreen.storyboard */; };
 		9851D99026B9120A00844769 /* Covid_19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9851D98F26B9120A00844769 /* Covid_19Tests.swift */; };
 		9851D99B26B9120A00844769 /* Covid_19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9851D99A26B9120A00844769 /* Covid_19UITests.swift */; };
+		98C66313277D8359004243F6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C66311277D8359004243F6 /* MainViewController.swift */; };
+		98C6631D277D83D5004243F6 /* VaccinationCenterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C6631B277D83D5004243F6 /* VaccinationCenterDetailViewModel.swift */; };
+		98C6631E277D83D5004243F6 /* VaccinationCenterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C6631C277D83D5004243F6 /* VaccinationCenterViewModel.swift */; };
+		98C66322277D8445004243F6 /* VaccinationCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C66320277D8445004243F6 /* VaccinationCenterViewController.swift */; };
+		98C66323277D8445004243F6 /* VaccinationCenterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C66321277D8445004243F6 /* VaccinationCenterDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +49,9 @@
 		984F1EDA26C2024F003A5FBE /* RESTful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTful.swift; sourceTree = "<group>"; };
 		984F1EDD26C22190003A5FBE /* CenterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterTableViewCell.swift; sourceTree = "<group>"; };
 		984F1EDE26C22190003A5FBE /* CenterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CenterTableViewCell.xib; sourceTree = "<group>"; };
-		984F1EE126C5F82E003A5FBE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9851D97526B9120800844769 /* Covid_19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Covid_19.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9851D97826B9120800844769 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9851D97A26B9120800844769 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9851D97C26B9120800844769 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9851D97F26B9120800844769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9851D98126B9120900844769 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9851D98426B9120900844769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +62,11 @@
 		9851D99626B9120A00844769 /* Covid_19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Covid_19UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9851D99A26B9120A00844769 /* Covid_19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid_19UITests.swift; sourceTree = "<group>"; };
 		9851D99C26B9120A00844769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98C66311277D8359004243F6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		98C6631B277D83D5004243F6 /* VaccinationCenterDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VaccinationCenterDetailViewModel.swift; path = Covid_19/ViewModels/VaccinationCenterDetailViewModel.swift; sourceTree = SOURCE_ROOT; };
+		98C6631C277D83D5004243F6 /* VaccinationCenterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VaccinationCenterViewModel.swift; path = Covid_19/ViewModels/VaccinationCenterViewModel.swift; sourceTree = SOURCE_ROOT; };
+		98C66320277D8445004243F6 /* VaccinationCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccinationCenterViewController.swift; sourceTree = "<group>"; };
+		98C66321277D8445004243F6 /* VaccinationCenterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccinationCenterDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +126,8 @@
 		984F1ED226C0C720003A5FBE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9851D97C26B9120800844769 /* ViewController.swift */,
-				984F1EE126C5F82E003A5FBE /* DetailViewController.swift */,
+				98C6631F277D83F7004243F6 /* VaccinationCenter */,
+				98C66311277D8359004243F6 /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -180,6 +186,7 @@
 				984F1ECF26C0C6E8003A5FBE /* Model */,
 				984F1ED126C0C70D003A5FBE /* View */,
 				984F1ED226C0C720003A5FBE /* Controllers */,
+				98C6630F277D82E5004243F6 /* View Models */,
 			);
 			path = Covid_19;
 			sourceTree = "<group>";
@@ -200,6 +207,24 @@
 				9851D99C26B9120A00844769 /* Info.plist */,
 			);
 			path = Covid_19UITests;
+			sourceTree = "<group>";
+		};
+		98C6630F277D82E5004243F6 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				98C6631B277D83D5004243F6 /* VaccinationCenterDetailViewModel.swift */,
+				98C6631C277D83D5004243F6 /* VaccinationCenterViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		98C6631F277D83F7004243F6 /* VaccinationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				98C66321277D8445004243F6 /* VaccinationCenterDetailViewController.swift */,
+				98C66320277D8445004243F6 /* VaccinationCenterViewController.swift */,
+			);
+			path = VaccinationCenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,14 +358,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98C6631D277D83D5004243F6 /* VaccinationCenterDetailViewModel.swift in Sources */,
+				98C66323277D8445004243F6 /* VaccinationCenterDetailViewController.swift in Sources */,
+				98C6631E277D83D5004243F6 /* VaccinationCenterViewModel.swift in Sources */,
+				98C66313277D8359004243F6 /* MainViewController.swift in Sources */,
 				984F1EDF26C22190003A5FBE /* CenterTableViewCell.swift in Sources */,
 				984F1ED626C0CB5E003A5FBE /* Center.swift in Sources */,
-				9851D97D26B9120800844769 /* ViewController.swift in Sources */,
+				98C66322277D8445004243F6 /* VaccinationCenterViewController.swift in Sources */,
 				984F1ED926C0CCB8003A5FBE /* HTTPRequest.swift in Sources */,
 				984F1EDB26C2024F003A5FBE /* RESTful.swift in Sources */,
 				9851D97926B9120800844769 /* AppDelegate.swift in Sources */,
 				9851D97B26B9120800844769 /* SceneDelegate.swift in Sources */,
-				984F1EE226C5F82E003A5FBE /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
