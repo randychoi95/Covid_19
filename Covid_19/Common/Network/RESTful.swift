@@ -13,7 +13,7 @@ enum JSONDecoderError:Error {
 
 class RESTful {
     public static func centerSearchNetwork(_ param: [String: Any]?, _ method: Method, completionHandler: @escaping(_ result: Int, _ data: Centers?, _ error: Error?)->()) {
-        HTTPRequest.request(param: param, method: method) { result, data, error in
+        HTTPRequest.request(param: param, path: .vaccination_center, method: method) { result, data, error in
             if result == -1 {
                 completionHandler(result,nil,error)
             } else {

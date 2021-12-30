@@ -17,11 +17,16 @@ enum Method: String {
     case post = "POST"
 }
 
+enum PATH: String {
+    case vaccination_center = "15077586/v1/centers"
+}
+
 class HTTPRequest: NSObject {
-    static let baseURL = "https://api.odcloud.kr/api/15077586/v1/centers"
+    static let baseURL = "https://api.odcloud.kr/api/"
     
-    public static func request(param: [String: Any]?, method: Method, completionHandler: @escaping (_ result: Int, _ data: Data?, _ error: Error?)->()) {
-        guard let url = URL(string: baseURL) else {
+    public static func request(param: [String: Any]?,path: PATH, method: Method, completionHandler: @escaping (_ result: Int, _ data: Data?, _ error: Error?)->()) {
+        let urlStr = "\(baseURL)\(path.rawValue)"
+        guard let url = URL(string: urlStr) else {
             return
         }
         
@@ -39,14 +44,15 @@ class HTTPRequest: NSObject {
             paramArr.append("\(key)=\(value)")
         }
         let paramData = paramArr.joined(separator: "&")
-        request.url = URL(string: "\(baseURL)?\(paramData)")
+        request.url = URL(string: "\(urlStr)?\(paramData)")
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let err = error {
                 completionHandler(-1,data,err)
             }
             else {
                 if let response = response as? HTTPURLResponse {
-                    print("response.statusCode = \(response.statusCode)")
+                    
                     if response.statusCode == 200 {
                         if let dat = data {
                             completionHandler(1,dat,nil)
